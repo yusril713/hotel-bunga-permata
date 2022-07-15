@@ -170,6 +170,11 @@
                     <div data-i18n="Without navbar">About us</div>
                   </a>
                 </li>
+                <li class="menu-item {{ request()->routeIs('abouts*') ? 'active' : '' }}">
+                    <a href="{{ route('image-about.index') }}" class="menu-link">
+                      <div data-i18n="Without navbar">Pictures in About us</div>
+                    </a>
+                  </li>
                 <li class="menu-item {{ request()->routeIs('services*') ? 'active' : '' }}">
                   <a href="{{ route('services.index') }}" class="menu-link">
                     <div data-i18n="Container">Services</div>

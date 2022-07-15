@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\About;
 use App\Models\Gallery;
+use App\Models\ImageAbout;
 use App\Models\Room;
 use App\Models\Staff;
 use App\Models\WhatsNew;
@@ -16,7 +17,8 @@ class HomeController extends Controller
         return view('users.about-us.index', [
             'data' => [
                 'about_us' => About::first(),
-                'staffs' => Staff::all()
+                'staffs' => Staff::all(),
+                'image_about' => ImageAbout::all()
             ]
         ]);
     }

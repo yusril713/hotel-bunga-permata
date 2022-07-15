@@ -46,37 +46,41 @@ Home
                 <h6 class="section-title text-start text-primary text-uppercase">About Us</h6>
                 <h1 class="mb-4">{{ $data['about_us']->title }}</h1>
                 <p class="mb-4">{{ $data['about_us']->description }}</p>
-                <div class="row g-3 pb-4">
-                    <div class="col-sm-4 wow fadeIn" data-wow-delay="0.1s">
-                        <div class="border rounded p-1">
-                            <div class="border rounded text-center p-4">
-                                <i class="fa fa-hotel fa-2x text-primary mb-2"></i>
-                                <h2 class="mb-1" data-toggle="counter-up">
-                                    {{ $data['about_us']->number_of_room }}
-                                </h2>
-                                <p class="mb-0">Rooms</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 wow fadeIn" data-wow-delay="0.3s">
-
-                    </div>
-                </div>
             </div>
             <div class="col-lg-6">
                 <div class="row g-3">
-                    <div class="col-6 text-end">
-                        <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.1s" src="{{ asset('img/ANDI7099-min.JPG') }}" style="margin-top: 25%;">
-                    </div>
-                    <div class="col-6 text-start">
-                        <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.3s" src="{{ asset('img/ANDI7111-min.JPG') }}">
-                    </div>
-                    <div class="col-6 text-end">
-                        <img class="img-fluid rounded w-50 wow zoomIn" data-wow-delay="0.5s" src="{{ asset('img/images (1)-min.jpeg') }}">
-                    </div>
-                    <div class="col-6 text-start">
-                        <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.7s" src="{{ asset('img/ANDI7506-min.JPG') }}">
-                    </div>
+                    @php
+                        $counter = 1;
+                    @endphp
+                    @foreach ($data['image_about'] as $item)
+                        @if ($counter == 1)
+                        <div class="col-6 text-end">
+                            <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.1s" src="{{ asset('storage/' . $item->image) }}" style="margin-top: 25%;">
+                        </div>
+                        @endif
+
+                        @if ($counter == 2)
+                        <div class="col-6 text-start">
+                            <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.3s" src="{{ asset('storage/' . $item->image) }}">
+                        </div>
+                        @endif
+
+                        @if ($counter == 3)
+                        <div class="col-6 text-end">
+                            <img class="img-fluid rounded w-50 wow zoomIn" data-wow-delay="0.5s" src="{{ asset('storage/' . $item->image) }}">
+                        </div>
+                        @endif
+
+                        @if ($counter == 4)
+                        <div class="col-6 text-start">
+                            <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.7s" src="{{ asset('storage/' . $item->image) }}">
+                        </div>
+                        @endif
+
+                        @php
+                            $counter++;
+                        @endphp
+                    @endforeach
                 </div>
             </div>
         </div>

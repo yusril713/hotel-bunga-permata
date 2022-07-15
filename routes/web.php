@@ -9,9 +9,11 @@ use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\StaffController;
 use App\Http\Controllers\Admin\WhatsNewController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ImageAboutController;
 use App\Models\About;
 use App\Models\Carousel;
 use App\Models\Explore;
+use App\Models\ImageAbout;
 use App\Models\Room;
 use App\Models\Service;
 use App\Models\Staff;
@@ -38,7 +40,8 @@ Route::get('/', function () {
             'services' => Service::all(),
             'staffs' => Staff::all(),
             'whats_new' => WhatsNew::orderBy('created_at', 'desc')->limit(3)->get(),
-            'explores' => Explore::with('detail.images')->orderBy('created_at', 'desc')->limit(3)->get()
+            'explores' => Explore::with('detail.images')->orderBy('created_at', 'desc')->limit(3)->get(),
+            'image_about' => ImageAbout::all()
         ]
     ]);
 })->name('home');
@@ -82,4 +85,5 @@ Route::middleware([
     Route::resource('whats-new', WhatsNewController::class)->except(['show']);
     Route::resource('galleries', GalleryController::class)->except(['show']);
     Route::resource('explores', ExploreController::class);
+    Route::resource('image-about', ImageAboutController::class)->only(['index', 'edit', 'update']);
 });
