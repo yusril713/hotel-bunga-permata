@@ -213,7 +213,7 @@
                             Marusu, Kabupaten Maros, Sulawesi Selatan 90552, Indonesia
                         </p>
                         <p class="mb-2"><i class="fa fa-phone me-3"></i>082197325590</p>
-                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>pt.indahpermatasejati@gmail.com</p>
                         <div class="d-flex pt-2">
                             <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/hotel_bunga_permata" target="_blank"><i class="fab fa-instagram"></i></a>
                             <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/HOTELBUNGAPERMATA" target="_blank"><i class="fab fa-facebook-f"></i></a>
