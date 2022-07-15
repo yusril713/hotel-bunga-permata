@@ -277,7 +277,9 @@ Home
 <!-- Team End --> --}}
 @endsection
 @section('script')
-    $('.carousel').carousel({
+   <script>
+     $('.carousel').carousel({
         interval: 5000 * 5 // 5 sec (1000ms * 5 = 5 sec)
     });
+   </script>
 @endsection
