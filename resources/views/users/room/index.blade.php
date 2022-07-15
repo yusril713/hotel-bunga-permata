@@ -4,7 +4,7 @@ Rooms
 @endsection
 @section('content')
 <!-- Page Header Start -->
-<div class="container-fluid page-header mb-5 p-0" style="background-image: url(img/carousel-1.jpg);">
+<div class="container-fluid page-header mb-5 p-0" style="background-image: url(img/ANDI7111-min.JPG);">
     <div class="container-fluid page-header-inner py-5">
         <div class="container text-center pb-5">
             <h1 class="display-3 text-white mb-3 animated slideInDown">Rooms</h1>
@@ -43,11 +43,6 @@ Rooms
                         <p class="text-body mb-3">{!! Str::limit(strip_tags($room->description), 100) !!}</p>
                         <div class="d-flex justify-content-between">
                             <a class="btn btn-sm btn-primary rounded py-2 px-4" href="{{ route('room.detail', [$room->slug]) }}">View Detail</a>
-                            @php
-                            $message = '*' . $room->name . "*\r\n*Price: IDR" . number_format($room->price) . "*\r\n*Nama:* \r\n*Alamat:* \r\n*Email:* \r\n*Tgl Booking:*";
-                            @endphp
-
-                            <a href="javascript:void(0)" class="btn btn-sm btn-dark rounded py-2 px-4" onclick="window.open('https://api.whatsapp.com/send?phone=6282197325590&text={{ urlencode(utf8_encode($message)) }}')" target="_blank">Book Now</a>
                         </div>
                     </div>
                 </div>

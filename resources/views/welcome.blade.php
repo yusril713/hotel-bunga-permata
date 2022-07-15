@@ -11,41 +11,26 @@ Home
             $counter = 0;
             @endphp
             @foreach ($data['carousel'] as $item)
-            @if ($counter == 0)
-            <div class="carousel-item active">
-                <img class="w-100" src="{{ asset('storage/' . $item->image) }}" alt="Image">
-                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                    <div class="p-3" style="max-width: 700px;">
-                        <h6 class="section-title text-white text-uppercase mb-3 animated slideInDown">
-                            {{ $item->title }}
-                        </h6>
-                        <h1 class="display-3 text-white mb-4 animated slideInDown">{{ $item->description }}</h1>
-                    </div>
+                @if ($counter == 0)
+                <div class="carousel-item active">
+                    <img class="w-100" src="{{ asset('storage/' . $item->image) }}" alt="Image">
+
                 </div>
-            </div>
-            @else
-            <div class="carousel-item">
-                <img class="w-100" src="{{ asset('storage/' . $item->image) }}" alt="Image">
-                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                    <div class="p-3" style="max-width: 700px;">
-                        <h6 class="section-title text-white text-uppercase mb-3 animated slideInDown">
-                            {{ $item->title }}
-                        </h6>
-                        <h1 class="display-3 text-white mb-4 animated slideInDown">{{ $item->description }}</h1>
-                    </div>
+                @else
+                <div class="carousel-item">
+                    <img class="w-100" src="{{ asset('storage/' . $item->image) }}" alt="Image">
                 </div>
-            </div>
-            @endif
-            @php
-            $counter += 1;
-            @endphp
+                @endif
+                @php
+                    $counter += 1;
+                @endphp
             @endforeach
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
+        <button class="d-none carousel-control-prev type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#header-carousel" data-bs-slide="next">
+        <button class="d-none carousel-control-next type="button" data-bs-target="#header-carousel" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
@@ -128,12 +113,6 @@ Home
                         <p class="text-body mb-3">{!! Str::limit(strip_tags($room->description), 100) !!}</p>
                         <div class="d-flex justify-content-between">
                             <a class="btn btn-sm btn-primary rounded py-2 px-4" href="{{ route('room.detail', [$room->slug]) }}">View Detail</a>
-
-                            @php
-                            $message = '*' . $room->name . "*\r\n*Price: IDR" . number_format($room->price) . "*\r\n*Nama:* \r\n*Alamat:* \r\n*Email:* \r\n*Tgl Booking:*";
-                            @endphp
-
-                            <a href="javascript:void(0)" class="btn btn-sm btn-dark rounded py-2 px-4" onclick="window.open('https://api.whatsapp.com/send?phone=6282197325590&text={{ urlencode(utf8_encode($message)) }}')" target="_blank">Book Now</a>
                         </div>
                     </div>
                 </div>
@@ -296,4 +275,9 @@ Home
 </div>
 </div>
 <!-- Team End --> --}}
+@endsection
+@section('script')
+    $('.carousel').carousel({
+        interval: 5000 * 5 // 5 sec (1000ms * 5 = 5 sec)
+    });
 @endsection

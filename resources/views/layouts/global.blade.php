@@ -149,7 +149,7 @@
                                 <a href="{{ url('/') }}"
                                     class="nav-item nav-link {{ request()->routeIs('home') ? 'active' : '' }}">Home</a>
                                 <a href="{{ url('/about-us') }}"
-                                    class="nav-item nav-link {{ request()->routeIs('about') ? 'active' : '' }}">About</a>
+                                    class="nav-item nav-link {{ request()->routeIs('about') ? 'active' : '' }}">About Us</a>
                                 <a href="{{ url('/room') }}"
                                     class="nav-item nav-link {{ request()->routeIs('room*') ? 'active' : '' }}">Rooms</a>
                                 <a href="{{ url('/whatsnew') }}"
@@ -207,7 +207,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-3">
+                    <div class="col-md-6 col-lg-4">
                         <h6 class="section-title text-start text-primary text-uppercase mb-4">Contact Us</h6>
                         <p class="mb-2"><i class="fa fa-map me-3"></i>Jl. Poros, Marumpa, Kec.
                             Marusu, Kabupaten Maros, Sulawesi Selatan 90552, Indonesia
