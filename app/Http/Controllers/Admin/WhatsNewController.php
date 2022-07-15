@@ -69,6 +69,7 @@ class WhatsNewController extends Controller
         if (file_exists(storage_path('app/public/' . $whatsNew->image))) {
             unlink(storage_path('app/public/' . $whatsNew->image));
         }
+        $whatsNew->delete();
         return redirect()->route('whats-new.index')->with('status', 'Data successfully removed');
     }
 }
