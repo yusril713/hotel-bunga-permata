@@ -26,7 +26,7 @@ class ImageAboutController extends Controller
         $image = ImageAbout::find($id);
         if ($request->hasFile('image')) {
             if (file_exists(storage_path('app/public/' . $image->image))) {
-                unlink(storage_path('app/public/about/' . $image->image));
+                unlink(storage_path('app/public/' . $image->image));
             }
             $file = $request->file('image')->store('about-us', 'public');
             $image->image = $file;
