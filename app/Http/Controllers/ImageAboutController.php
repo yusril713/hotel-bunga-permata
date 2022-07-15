@@ -26,13 +26,14 @@ class ImageAboutController extends Controller
     {
         try {
             $image = ImageAbout::find($id);
-            if ($request->hasFile('image')) {
-                if (file_exists(storage_path('app/public/' . $image->image))) {
-                    unlink(storage_path('app/public/' . $image->image));
-                }
-                $file = $request->file('image')->store('about-us', 'public');
-                $image->image = $file;
-            }
+            // if ($request->hasFile('image')) {
+            //     if (file_exists(storage_path('app/public/' . $image->image))) {
+            //         unlink(storage_path('app/public/' . $image->image));
+            //     }
+            //     $file = $request->file('image')->store('about-us', 'public');
+            //     $image->image = $file;
+            // }
+            $image->image = 'blaaa';
             $image->save();
         } catch (Exception $e) {
             return $e;
