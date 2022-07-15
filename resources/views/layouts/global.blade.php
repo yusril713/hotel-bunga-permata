@@ -138,7 +138,7 @@
                 <div class="col-md-9">
                     <nav class="navbar navbar-expand-lg navbar-fixed navbar-dark p-3 p-lg-0">
                         <a href="{{ url('/') }}" class="navbar-brand d-block d-lg-none">
-                            <h1 class="m-0 text-primary text-uppercase">Hotel Bunga Permata</h1>
+                            <img src="{{ asset('img/logo.png') }}" alt="" class="img-fluid" width="50">
                         </a>
                         <button type="button" class="navbar-toggler" data-bs-toggle="collapse"
                             data-bs-target="#navbarCollapse">
