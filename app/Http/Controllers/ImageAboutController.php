@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ImageAbout;
+use Exception;
 use Illuminate\Http\Request;
 
 class ImageAboutController extends Controller
@@ -23,15 +24,20 @@ class ImageAboutController extends Controller
 
     public function update(Request $request, $id)
     {
-        $image = ImageAbout::find($id);
-        if ($request->hasFile('image')) {
-            if (file_exists(storage_path('app/public/' . $image->image))) {
-                unlink(storage_path('app/public/' . $image->image));
+        try {
+            $image = ImageAbout::find($id);
+            if ($request->hasFile('image')) {
+                if (file_exists(storage_path('app/public/' . $image->image))) {
+                    unlink(storage_path('app/public/' . $image->image));
+                }
+                $file = $request->file('image')->store('about-us', 'public');
+                $image->image = $file;
             }
-            $file = $request->file('image')->store('about-us', 'public');
-            $image->image = $file;
+            $image->save();
+        } catch (Exception $e) {
+            return $e;
         }
-        $image->save();
+
         return redirect()->route('image-about.index')->with('status', 'Data successfully changed');
     }
 }
