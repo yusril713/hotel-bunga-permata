@@ -131,7 +131,8 @@
                 <div class="col-md-3 d-none d-md-block">
                     <a href="{{ url('/') }}"
                         class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center">
-                        <h1 class="m-0 text-primary text-uppercase">Bunga Permata</h1>
+                        {{-- <h1 class="m-0 text-primary text-uppercase">Bunga Permata</h1> --}}
+                        <img src="{{ asset('img/logo.png') }}" alt="" class="img-fluid" width="50">
                     </a>
                 </div>
                 <div class="col-md-9">
@@ -211,7 +212,7 @@
                         <p class="mb-2"><i class="fa fa-map me-3"></i>Jl. Poros, Marumpa, Kec.
                             Marusu, Kabupaten Maros, Sulawesi Selatan 90552, Indonesia
                         </p>
-                        <p class="mb-2"><i class="fa fa-phone me-3"></i>+62 822-1778-9333</p>
+                        <p class="mb-2"><i class="fa fa-phone me-3"></i>082197325590</p>
                         <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
                         <div class="d-flex pt-2">
                             <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/hotel_bunga_permata" target="_blank"><i class="fab fa-instagram"></i></a>
