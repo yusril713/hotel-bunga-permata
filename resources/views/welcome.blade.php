@@ -227,13 +227,8 @@ Home
         </div>
         <div class="row g-4">
             @foreach ($data['services'] as $service)
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <a class="service-item rounded" href="">
-                    <div class="service-icon bg-transparent border rounded p-1">
-                        <div class="w-100 h-100 border rounded d-flex align-items-center justify-content-center">
-                            <i class="fa fa-hotel fa-2x text-primary"></i>
-                        </div>
-                    </div>
+            <div class="col-lg-3     col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <a class="service-item rounded" href="#.">
                     <h5 class="mb-3">{{ $service->title }}</h5>
                     <p class="text-body mb-0">{!! nl2br($service->description) !!}</p>
                 </a>
